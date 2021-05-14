@@ -26,9 +26,29 @@ function partOne(data) {
       )
         valid++;
     });
-    return valid
+    return valid;
   }
-  return 'error'
+  return "error";
 }
 
-console.log(partOne(formatData(DATA)))
+// console.log(partOne(formatData(DATA)))
+
+function partTwo(data) {
+  if (data) {
+    let valid = 0;
+    data.forEach((grp) => {
+      let lowIndex = +grp[0][0] - 1;
+      let highIndex = +grp[0][1] - 1;
+      let testLetter = grp[1];
+      let pass = grp[2];
+      if (pass[lowIndex] == testLetter || pass[highIndex] == testLetter)
+        valid++;
+      if (pass[lowIndex] == testLetter && pass[highIndex] == testLetter)
+        valid--;
+    });
+    return valid;
+  }
+  return "error";
+}
+
+console.log(partTwo(formatData(DATA)));
