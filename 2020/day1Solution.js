@@ -1,6 +1,6 @@
 const fs = require("fs");
 const DATA = fs
-  .readFileSync("./inputDayOne", "utf-8")
+  .readFileSync("./inputDay1.txt", "utf-8")
   .split("\n")
   .map((val) => +val);
 
